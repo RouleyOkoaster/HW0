@@ -26,9 +26,7 @@ func main() {
 	} else if answer == "OK\n" {
 		fmt.Println("Ответ от сервера:", answer)
 	} else {
-		_, anserr := fmt.Fprintln(os.Stderr, "Ответ от сервера не соответствует ожиданиям")
-		if anserr != nil {
-			return
-		}
+		fmt.Fprintln(os.Stderr, "Ответ от сервера не соответствует ожиданиям: ", answer)
+		return
 	}
 }
